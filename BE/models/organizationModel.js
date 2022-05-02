@@ -13,6 +13,6 @@ const organizationSchema = mongoose.Schema({
 
 })
 
-const Organization = mongoose.model('Organizaiton', organizationSchema)
+const Organization = mongoose.model('Organization', organizationSchema)
 
 module.exports = { Organization }

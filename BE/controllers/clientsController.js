@@ -17,6 +17,6 @@ const createClient = async (req, res) => {
 
 
 module.exports = {
-    getClients,
+  getClient,
     createClient
 }
