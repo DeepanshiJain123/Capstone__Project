@@ -10,7 +10,8 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const compression = require('compression');
 const cors = require('cors');
-const organizationsRouter = require('./routes/organizationRouter')
+const organizationsRouter = require('./routes/organizationRouter');
+const clientsRouter = require('./routes/clientRouter');
 
 // Start express app
 const app = express();
@@ -95,6 +96,11 @@ app.get('/', (req, res) => {
 //app.use('/', viewRouter);
 //app.use('/api/v1/employees', reviewRouter);
 app.use('/api/v1/organizations', organizationsRouter);
+
+//New Line
+app.use('/api/v1/clients', clientsRouter);
+
+
 
 app.all('*', (req, res, next) => {
   res.status(404)
