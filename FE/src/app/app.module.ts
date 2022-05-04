@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 
 
 
+
+
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { AdminModule } from './admin/admin.module';
@@ -20,12 +23,11 @@ import { SignupComponent } from './authentication/signup/signup.component';
   imports: [
     BrowserModule,
 
+
     AppRoutingModule,
 
     FormsModule,
     AdminModule
-    
-
   ],
   providers: [],
   bootstrap: [AppComponent]
