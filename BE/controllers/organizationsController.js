@@ -5,6 +5,8 @@ const checkID = (req, res, next, val) => {
   next();
 };
 
+
+
 const getOrganizations = async (req, res) => {
 
   // database me se get all the organizations & return back in json
@@ -18,6 +20,9 @@ const getOneOrganization = async (req, res) => {
   const OneOrganization = await Organization.findById(req.params.id)
 
   res.send(OneOrganization)
+
+  req.user=await Organization.findById(req.params.id)
+  console.log(req.user)
 }
 
 const createOrganization = async (req, res) => {
@@ -28,10 +33,15 @@ const createOrganization = async (req, res) => {
 }
 
 const updateOrganization = async (req, res) => {
-
-  const updateOrganization = await Organization.findByIdAndUpdate(req.user.id, req.body)
+  
+  const updateOrganization = await Organization.findByIdAndUpdate(req.user.id)
+  console.log('hi')
+  req.user=await Organization.findByIdAndUpdate(req.params.id)
+  
 
   res.send(updateOrganization)
+
+  
 }
 
 
