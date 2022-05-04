@@ -36,7 +36,7 @@ const updateOrganization = async (req, res) => {
 
 const deleteOrganization = async (req, res) => {
 
-  const deleteOrganization = await Organization.findByIdAndDelete(req.params.id)
+  const deleteOrganization = await Organization.findByIdAndDelete(req.params.id, req.body)
 
   res.send(deleteOrganization)
 }

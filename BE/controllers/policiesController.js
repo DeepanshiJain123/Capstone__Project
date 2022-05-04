@@ -28,7 +28,7 @@ const createPolicy = async (req, res) => {
 
 const updatePolicy = async (req, res) => {
 
-  const updatePolicy = await Policy.findByIdAndUpdate(req.user.id, req.body)
+  const updatePolicy = await Policy.findByIdAndUpdate(req.params.id, req.body)
 
   res.send(updatePolicy)
 }
@@ -37,7 +37,7 @@ const updatePolicy = async (req, res) => {
 
 const deletePolicy = async (req, res) => {
 
-  const deletePolicy = await Policy.findByIdAndDelete(req.user.id, req.body)
+  const deletePolicy = await Policy.findByIdAndDelete(req.params.id, req.body)
 
   res.send(deletePolicy)
 }

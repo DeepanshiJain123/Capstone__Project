@@ -28,14 +28,14 @@ const getOneClient = async (req, res) => {
 
 const updateClient = async (req, res) => {
 
-  const updateClient = await Client.findByIdAndUpdate(req.user.id, req.body)
+  const updateClient = await Client.findByIdAndUpdate(req.params.id, req.body)
 
   res.send(updateClient)
 }
 
 const deleteClient = async (req, res) => {
 
-  const deleteClient = await Client.findByIdAndDelete(req.user.id, req.body)
+  const deleteClient = await Client.findByIdAndDelete(req.params.id, req.body)
 
   res.send(deleteClient)
 }

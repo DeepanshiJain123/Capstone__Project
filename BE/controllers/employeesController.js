@@ -3,43 +3,51 @@ const { Employee } = require("../models/employeeModel")
 const checkID = (req, res, next, val) => {
   console.log(`Employee id is: ${val}`);
   next();
-};
+}
 
-const getAllEmployee = async (req, res) => {
+const getAllEmployees = async (req, res) => {
 
-    const allEmployee = await Employee.find()
+  // database me se get all the Employeees & return back in json
+  const allEmployees = await Employee.find()
 
-    res.send(allEmployee)
-} 
-
-const createEmployee = async (req, res) => {
-
-      const newEmployee = await Employee.create(req.body)
-
-      res.send(newEmployee)
-} 
+  res.send(allEmployees)
+}
 
 const getOneEmployee = async (req, res) => {
-  const oneEmployee = await Employee.findById(req.params.id)
-  res.send(oneEmployee)
+
+  const OneEmployeee = await Employeee.findById(req.params.id)
+  res.send(OneEmployeee)
 }
 
-const updateOneEmployee = async (req, res) => {
-  const updateEmployee = await Employee.findByIdAndUpdate(req.params.id, req.body)
-  res.send(updateEmployee)
+const createEmployeee = async (req, res) => {
+
+  const newEmployeee = await Employeee.create(req.body)
+
+  res.send(newEmployeee)
 }
 
-const deleteOneEmployee = async (req, res) => {
-  const deleteEmployee = await Employee.findByIdAndDelete(req.params.id, req.body)
-  res.send(deleteEmployee)
+const updateEmployeee = async (req, res) => {
+  
+  const updateEmployeee = await Employeee.findByIdAndUpdate(req.params.id, req.body)
+  res.send(updateEmployeee)
 }
+
+
+
+const deleteEmployeee = async (req, res) => {
+
+  const deleteEmployeee = await Employeee.findByIdAndDelete(req.params.id, req.body)
+
+  res.send(deleteEmployeee)
+}
+
 
 
 module.exports = {
-    getAllEmployee,
-    createEmployee,
-    getOneEmployee,
-    updateOneEmployee,
-    deleteOneEmployee,
-    checkID
+  checkID,
+  getAllEmployees,
+  createEmployeee,
+  updateEmployeee,
+  getOneEmployee,
+  deleteEmployeee
 }
