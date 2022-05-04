@@ -15,6 +15,8 @@ const cors = require('cors');  //Definition
 //Routes
 const organizationsRouter = require('./routes/organizationRouter');
 const clientsRouter = require('./routes/clientRouter');
+const employeesRouter=require('./routes/employeeRouter')
+// const policyRouter=require('./routes/policyRouter');
 
 // Start express app
 const app = express();
@@ -102,6 +104,12 @@ app.use('/api/v1/organizations', organizationsRouter);
 
 //New Line
 app.use('/api/v1/clients', clientsRouter);
+
+//employee
+app.use('/api/v1/employees', employeesRouter);
+
+//policy
+// app.use('/api/v1/policy',policyRouter);
 
 
 
