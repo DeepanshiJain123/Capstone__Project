@@ -3,9 +3,7 @@ const { Organization } = require("../models/organizationModel")
 const checkID = (req, res, next, val) => {
   console.log(`Organisation id is: ${val}`);
   next();
-};
-
-
+}
 
 const getOrganizations = async (req, res) => {
 
@@ -18,11 +16,7 @@ const getOrganizations = async (req, res) => {
 const getOneOrganization = async (req, res) => {
 
   const OneOrganization = await Organization.findById(req.params.id)
-
   res.send(OneOrganization)
-
-  req.user=await Organization.findById(req.params.id)
-  console.log(req.user)
 }
 
 const createOrganization = async (req, res) => {
@@ -34,21 +28,15 @@ const createOrganization = async (req, res) => {
 
 const updateOrganization = async (req, res) => {
   
-  const updateOrganization = await Organization.findByIdAndUpdate(req.user.id)
-  console.log('hi')
-  req.user=await Organization.findByIdAndUpdate(req.params.id)
-  
-
+  const updateOrganization = await Organization.findByIdAndUpdate(req.params.id, req.body)
   res.send(updateOrganization)
-
-  
 }
 
 
 
 const deleteOrganization = async (req, res) => {
 
-  const deleteOrganization = await Organization.findByIdAndDelete(req.user.id, req.body)
+  const deleteOrganization = await Organization.findByIdAndDelete(req.params.id)
 
   res.send(deleteOrganization)
 }
