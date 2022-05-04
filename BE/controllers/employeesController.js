@@ -7,7 +7,7 @@ const checkID = (req, res, next, val) => {
 
 const getAllEmployees = async (req, res) => {
 
-  // database me se get all the Employeees & return back in json
+  
   const allEmployees = await Employee.find()
 
   res.send(allEmployees)
@@ -15,30 +15,30 @@ const getAllEmployees = async (req, res) => {
 
 const getOneEmployee = async (req, res) => {
 
-  const OneEmployeee = await Employeee.findById(req.params.id)
-  res.send(OneEmployeee)
+  const OneEmployee = await Employee.findById(req.params.id)
+  res.send(OneEmployee)
 }
 
-const createEmployeee = async (req, res) => {
+const createEmployee = async (req, res) => {
 
-  const newEmployeee = await Employeee.create(req.body)
+  const newEmployee = await Employee.create(req.body)
 
-  res.send(newEmployeee)
+  res.send(newEmployee)
 }
 
-const updateEmployeee = async (req, res) => {
+const updateEmployee = async (req, res) => {
   
-  const updateEmployeee = await Employeee.findByIdAndUpdate(req.params.id, req.body)
-  res.send(updateEmployeee)
+  const updateEmployee = await Employee.findByIdAndUpdate(req.params.id, req.body)
+  res.send(updateEmployee)
 }
 
 
 
-const deleteEmployeee = async (req, res) => {
+const deleteEmployee = async (req, res) => {
 
-  const deleteEmployeee = await Employeee.findByIdAndDelete(req.params.id, req.body)
+  const deleteEmployee = await Employee.findByIdAndDelete(req.params.id, req.body)
 
-  res.send(deleteEmployeee)
+  res.send(deleteEmployee)
 }
 
 
@@ -46,8 +46,8 @@ const deleteEmployeee = async (req, res) => {
 module.exports = {
   checkID,
   getAllEmployees,
-  createEmployeee,
-  updateEmployeee,
+  createEmployee,
+  updateEmployee,
   getOneEmployee,
-  deleteEmployeee
+  deleteEmployee
 }
