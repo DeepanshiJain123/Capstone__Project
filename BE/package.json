@@ -1,7 +1,6 @@
 {
   "name": "be_capstone",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node server.js",
@@ -54,5 +53,6 @@
   },
   "engines": {
     "node": "^10"
-  }
+  },
+  "description": ""
 }
